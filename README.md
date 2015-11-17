@@ -1,11 +1,12 @@
 # sql-Gen
-generate sql through cpp expressions.
+generate sql through normal cpp expressions at runtime.
 
-let you write the following code in pure cpp:
+Allow you to write the following code in pure cpp:
 
-sql=Select()
+string sql=Select()
     .select(userTable.name,classTable.name)
     .from(userTable.join(classTable, classTable.age==userTable.age))
     .where(userTable.age==18)
     .orderBy(userTable.name, OrderDesc);
-exe(sql);
+
+// send the string to your db driver.
